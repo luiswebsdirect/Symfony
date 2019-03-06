@@ -20,6 +20,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = [
+        'noticia' => [[], ['_controller' => 'App\\Controller\\DeportesController::cargarBd'], [], [['text', '/deportes/cargarbd']], [], []],
         'usuario' => [[], ['_controller' => 'App\\Controller\\DeportesController::sesionUsuario'], [], [['text', '/deportes/usuario']], [], []],
         'usuario_session' => [['nombre'], ['_controller' => 'App\\Controller\\DeportesController::paginaUsuario'], [], [['variable', '/', '[^/]++', 'nombre', true], ['text', '/deportes/usuario']], [], []],
         'app_deportes_rutaavanzada' => [['_locale', 'fecha', 'seccion', 'equipo', 'slug', '_format'], ['slug' => '1', '_format' => 'html', '_controller' => 'App\\Controller\\DeportesController::rutaAvanzada'], ['_locale' => 'es|en', '_format' => 'html|json|xml', 'fecha' => '[\\d+]{8}'], [['variable', '.', 'html|json|xml', '_format', true], ['variable', '/', '[^/\\.]++', 'slug', true], ['variable', '/', '[^/]++', 'equipo', true], ['variable', '/', '[^/]++', 'seccion', true], ['variable', '/', '[\\d+]{8}', 'fecha', true], ['variable', '/', 'es|en', '_locale', true], ['text', '/deportes']], [], []],
