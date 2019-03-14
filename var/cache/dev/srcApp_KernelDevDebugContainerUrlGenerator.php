@@ -20,15 +20,17 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = [
+        'app_deportes_inicio' => [[], ['_controller' => 'App\\Controller\\DeportesController::inicio'], [], [['text', '/deportes']], [], []],
+        'eliminarNoticia' => [[], ['_controller' => 'App\\Controller\\DeportesController::eliminarBd'], [], [['text', '/deportes/eliminar']], [], []],
+        'lista_paginas' => [['seccion', 'pagina'], ['seccion' => 'tenis', 'pagina' => 1, '_controller' => 'App\\Controller\\DeportesController::lista'], ['pagina' => '\\d+'], [['variable', '/', '\\d+', 'pagina', true], ['variable', '/', '[^/]++', 'seccion', true], ['text', '/deportes']], [], []],
+        'verNoticia' => [['seccion', 'titular'], ['seccion' => 'tenis', '_controller' => 'App\\Controller\\DeportesController::noticia'], [], [['variable', '/', '[^/]++', 'titular', true], ['variable', '/', '[^/]++', 'seccion', true], ['text', '/deportes']], [], []],
+        'actualizarNoticia' => [[], ['_controller' => 'App\\Controller\\DeportesController::actualizarBd'], [], [['text', '/deportes/actualizar']], [], []],
         'noticia' => [[], ['_controller' => 'App\\Controller\\DeportesController::cargarBd'], [], [['text', '/deportes/cargarbd']], [], []],
         'usuario' => [[], ['_controller' => 'App\\Controller\\DeportesController::sesionUsuario'], [], [['text', '/deportes/usuario']], [], []],
         'usuario_session' => [['nombre'], ['_controller' => 'App\\Controller\\DeportesController::paginaUsuario'], [], [['variable', '/', '[^/]++', 'nombre', true], ['text', '/deportes/usuario']], [], []],
         'app_deportes_rutaavanzada' => [['_locale', 'fecha', 'seccion', 'equipo', 'slug', '_format'], ['slug' => '1', '_format' => 'html', '_controller' => 'App\\Controller\\DeportesController::rutaAvanzada'], ['_locale' => 'es|en', '_format' => 'html|json|xml', 'fecha' => '[\\d+]{8}'], [['variable', '.', 'html|json|xml', '_format', true], ['variable', '/', '[^/\\.]++', 'slug', true], ['variable', '/', '[^/]++', 'equipo', true], ['variable', '/', '[^/]++', 'seccion', true], ['variable', '/', '[\\d+]{8}', 'fecha', true], ['variable', '/', 'es|en', '_locale', true], ['text', '/deportes']], [], []],
         'app_deportes_rutaavanzadalistado' => [['_locale', 'fecha', 'seccion', 'equipo', 'pagina'], ['slug' => '1', '_format' => 'html', 'pagina' => '1', '_controller' => 'App\\Controller\\DeportesController::rutaAvanzadaListado'], ['_locale' => 'es|en', '_format' => 'html|json|xml', 'fecha' => '[\\d+]{8}', 'pagina' => '\\d+'], [['variable', '/', '\\d+', 'pagina', true], ['variable', '/', '[^/]++', 'equipo', true], ['variable', '/', '[^/]++', 'seccion', true], ['variable', '/', '[\\d+]{8}', 'fecha', true], ['variable', '/', 'es|en', '_locale', true], ['text', '/deportes']], [], []],
-        'lista_paginas' => [['seccion', 'pagina'], ['seccion' => 'tenis', 'pagina' => 1, '_controller' => 'App\\Controller\\DeportesController::lista'], ['pagina' => '\\d+'], [['variable', '/', '\\d+', 'pagina', true], ['variable', '/', '[^/]++', 'seccion', true], ['text', '/deportes']], [], []],
-        'app_deportes_noticia' => [['seccion', 'slug'], ['seccion' => 'tenis', '_controller' => 'App\\Controller\\DeportesController::noticia'], [], [['variable', '/', '[^/]++', 'slug', true], ['variable', '/', '[^/]++', 'seccion', true], ['text', '/deportes']], [], []],
         'app_deportes_mostrar' => [['slug'], ['_controller' => 'App\\Controller\\DeportesController::mostrar'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/deportes']], [], []],
-        'app_deportes_inicio' => [[], ['_controller' => 'App\\Controller\\DeportesController::inicio'], [], [['text', '/deportes']], [], []],
     ];
         }
     }

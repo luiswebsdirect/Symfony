@@ -9,6 +9,13 @@ use App\Entity\Noticia;
 
 class DeportesController extends Controller
 {
+
+    /**
+     * @Route("/deportes")
+     */
+    public function inicio() {
+        return $this->render("base.html.twig");
+    }
     /**
      * @Route("/deportes/eliminar", name="eliminarNoticia")
      */
@@ -28,18 +35,55 @@ class DeportesController extends Controller
     public function lista($pagina = 1, $seccion) {
         $em=$this->getDoctrine()->getManager();
         $repository = $this->getDoctrine()->getRepository(Noticia::class);
-        //Buscamos las noticias de una sección
+
         $noticiaSec= $repository->findOneBy(['seccion' => $seccion]);
-        // Si la sección no existe saltará una excepción
-        if(!$noticiaSec) {
-            throw $this->createNotFoundException('Error 404 este deporte no está en nuestra Base de Datos');
-        }
+        // Si el deporte que buscamos no se encuentra lanzamos la
+        // excepcion 404 deporte no encontrado
+        /*if(!$noticiaSec) {
+            //throw $this->createNotFoundException('Error 404 este deporte no está en nuestra Base de Datos');
+        }*/
+
         // Almacenamos todas las noticias de una sección en una lista
         $noticias = $repository->findBy([
             "seccion"=>$seccion
         ]);
-        return new Response("Hay un total de ".count($noticias)." noticias de la sección de ".$seccion);
+
+        return $this->render('noticias/listar.html.twig', [
+            // La función str_replace elimina los símbolos - de los títulos
+            'titulo' => ucwords(str_replace('-', ' ', $seccion)),
+            'noticias'=>$noticias
+        ]);
     }
+
+    /**
+     * @Route("/deportes/{seccion}/{titular} ",
+     * defaults={"seccion":"tenis"}, name="verNoticia")
+     */
+    public function noticia($titular, $seccion)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()->getRepository(Noticia::class);
+        $noticia= $repository->findOneBy(['textoTitular' => $titular]);
+        // Si la noticia que buscamos no se encuentra lanzamos error 404
+        if(!$noticia){
+            // Ahora que controlamos el manejo de plantilla twig, vamos a
+            // redirigir al usuario a la página de inicio
+            // y mostraremos el error 404, para así no mostrar la página de
+            // errores generica de symfony
+            //throw $this->createNotFoundException('Error 404 este deporte no está en nuestra Base de Datos');
+            return $this->render("base.html.twig",[
+                'texto'=>"Error 404 Página no encontrada"
+            ]);
+        }
+        return $this->render('noticias/noticia.html.twig', [
+            // Parseamos el titular para quitar los símbolos -
+            'titulo' => ucwords(str_replace('-', ' ', $titular)),
+            'noticias'=>$noticia
+
+        ]);
+    }
+
+
     /**
      * @Route("/deportes/actualizar", name="actualizarNoticia")
      */
@@ -139,29 +183,12 @@ class DeportesController extends Controller
 
 
     /**
-     * @Route("/deportes/{seccion}/{slug} ",
-     * defaults={"seccion":"tenis"})
-     */
-    public function noticia($slug, $seccion) {
-
-        return new Response(sprintf(
-            'Noticia de %s, con url dinámica=%s',
-            $seccion, $slug));
-    }
-
-    /**
      * @Route("/deportes/{slug}")
      */
     public function mostrar($slug) {
         return new Response(sprintf(
             'Mi artículo en mi pagina de deportes: ruta %s',
             $slug));
-    }
-    /**
-     * @Route("/deportes")
-     */
-    public function inicio() {
-        return new Response('Mi página de deportes!');
     }
 
 }

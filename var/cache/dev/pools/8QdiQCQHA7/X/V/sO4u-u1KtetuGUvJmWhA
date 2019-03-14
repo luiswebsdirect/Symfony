@@ -8,7 +8,10 @@
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/deportes/{seccion}/{slug} ',
+                    '/deportes/{seccion}/{titular} ',
+                ],
+                'name' => [
+                    'verNoticia',
                 ],
                 'defaults' => [
                     [
