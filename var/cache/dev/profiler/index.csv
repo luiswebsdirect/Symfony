@@ -1,0 +1,5 @@
+0cad8e,127.0.0.1,GET,http://127.0.0.1:8000/deportes,1553031102,,500
+ff0e39,127.0.0.1,GET,http://127.0.0.1:8000/deportes,1553111337,,200
+e6ac72,127.0.0.1,GET,http://127.0.0.1:8000/deportes,1553111447,,200
+4b91db,127.0.0.1,GET,http://localhost:8000/deportes/tenis,1553111450,,200
+0abc9d,127.0.0.1,GET,http://localhost:8000/favicon.ico,1553111452,,404

@@ -2831,17 +2831,17 @@
     },
     {
         "name": "symfony/maker-bundle",
-        "version": "v1.11.4",
-        "version_normalized": "1.11.4.0",
+        "version": "v1.11.5",
+        "version_normalized": "1.11.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/maker-bundle.git",
-            "reference": "540996bfdcc14ca38dfe4865c020d965020ae821"
+            "reference": "186ffc80b8f363e04ea3c2ebf49e1263a84b4e39"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/540996bfdcc14ca38dfe4865c020d965020ae821",
-            "reference": "540996bfdcc14ca38dfe4865c020d965020ae821",
+            "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/186ffc80b8f363e04ea3c2ebf49e1263a84b4e39",
+            "reference": "186ffc80b8f363e04ea3c2ebf49e1263a84b4e39",
             "shasum": ""
         },
         "require": {
@@ -2865,7 +2865,7 @@
             "symfony/process": "^3.4|^4.0",
             "symfony/yaml": "^3.4|^4.0"
         },
-        "time": "2019-03-01T20:45:16+00:00",
+        "time": "2019-03-11T15:55:09+00:00",
         "type": "symfony-bundle",
         "extra": {
             "branch-alias": {
@@ -3128,17 +3128,17 @@
     },
     {
         "name": "symfony/routing",
-        "version": "v4.2.3",
-        "version_normalized": "4.2.3.0",
+        "version": "v4.2.4",
+        "version_normalized": "4.2.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/routing.git",
-            "reference": "7f8e44fc498972466f0841c3e48dc555f23bdf53"
+            "reference": "ff03eae644e6b1e26d4a04b2385fe3a1a7f04e42"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/routing/zipball/7f8e44fc498972466f0841c3e48dc555f23bdf53",
-            "reference": "7f8e44fc498972466f0841c3e48dc555f23bdf53",
+            "url": "https://api.github.com/repos/symfony/routing/zipball/ff03eae644e6b1e26d4a04b2385fe3a1a7f04e42",
+            "reference": "ff03eae644e6b1e26d4a04b2385fe3a1a7f04e42",
             "shasum": ""
         },
         "require": {
@@ -3166,7 +3166,7 @@
             "symfony/http-foundation": "For using a Symfony Request object",
             "symfony/yaml": "For using the YAML loader"
         },
-        "time": "2019-01-29T09:49:29+00:00",
+        "time": "2019-02-23T15:17:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3639,17 +3639,17 @@
     },
     {
         "name": "symfony/web-server-bundle",
-        "version": "v4.2.3",
-        "version_normalized": "4.2.3.0",
+        "version": "v4.2.4",
+        "version_normalized": "4.2.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/web-server-bundle.git",
-            "reference": "8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3"
+            "reference": "d189cb4349d807df4c4fab932e2764d1fbe65c4f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3",
-            "reference": "8f7afc85c27cf53b77a3ae8d2a3d86f537c323a3",
+            "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/d189cb4349d807df4c4fab932e2764d1fbe65c4f",
+            "reference": "d189cb4349d807df4c4fab932e2764d1fbe65c4f",
             "shasum": ""
         },
         "require": {
@@ -3665,7 +3665,7 @@
             "symfony/expression-language": "For using the filter option of the log server.",
             "symfony/monolog-bridge": "For using the log server."
         },
-        "time": "2019-01-16T20:35:37+00:00",
+        "time": "2019-02-23T15:17:42+00:00",
         "type": "symfony-bundle",
         "extra": {
             "branch-alias": {

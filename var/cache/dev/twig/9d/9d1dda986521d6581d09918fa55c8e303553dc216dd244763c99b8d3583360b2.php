@@ -163,14 +163,7 @@ class __TwigTemplate_beac09c547c2bcedf155225c4c92666de9b344792249a7451c83b9c0e9b
         // line 57
         echo "    <!-- AÑADIR TEXTO EN EL CUERPO DE NUESTRA PÁGINA -->
     <div class=\"container text-center\">
-        <h1 class=\"text-muted\">";
-        // line 59
-        if (($context["texto"] ?? null)) {
-            echo twig_escape_filter($this->env, ($context["texto"] ?? null), "html", null, true);
-        } else {
-            echo "Mi página de deportes";
-        }
-        echo "</h1>
+        <h1 class=\"text-muted\">Mi página de deportes</h1>
     </div>
 ";
         
@@ -213,7 +206,7 @@ class __TwigTemplate_beac09c547c2bcedf155225c4c92666de9b344792249a7451c83b9c0e9b
 
     public function getDebugInfo()
     {
-        return array (  194 => 68,  185 => 67,  168 => 59,  164 => 57,  155 => 56,  141 => 8,  132 => 7,  114 => 4,  102 => 75,  100 => 67,  93 => 62,  91 => 56,  46 => 13,  44 => 7,  38 => 4,  33 => 1,);
+        return array (  187 => 68,  178 => 67,  164 => 57,  155 => 56,  141 => 8,  132 => 7,  114 => 4,  102 => 75,  100 => 67,  93 => 62,  91 => 56,  46 => 13,  44 => 7,  38 => 4,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -276,7 +269,7 @@ class __TwigTemplate_beac09c547c2bcedf155225c4c92666de9b344792249a7451c83b9c0e9b
 {% block body %}
     <!-- AÑADIR TEXTO EN EL CUERPO DE NUESTRA PÁGINA -->
     <div class=\"container text-center\">
-        <h1 class=\"text-muted\">{% if texto %}{{ texto }}{% else %}Mi página de deportes{% endif %}</h1>
+        <h1 class=\"text-muted\">Mi página de deportes</h1>
     </div>
 {% endblock %}
 <footer class=\"footer\">
