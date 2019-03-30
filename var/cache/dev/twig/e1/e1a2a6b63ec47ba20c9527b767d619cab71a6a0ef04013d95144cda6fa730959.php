@@ -78,27 +78,54 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
                     <img class=\"nav-profile-img rounded-circle\" src=\"/images/runner.png\">
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                    <a class=\"dropdown-item\" href=\"#\">Perfil</a>
-                    <a class=\"dropdown-item\" href=\"#\">Crear Post</a>
-                    <a class=\"dropdown-item\" href=\"#\">Logout</a>
-                </div>
+                    <a class=\"dropdown-item\" href=\"#\">";
+        // line 48
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Perfil"), "html", null, true);
+        echo "</a>
+                    <a class=\"dropdown-item\" href=\"#\">";
+        // line 49
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Crear Noticia"), "html", null, true);
+        echo "</a>
+                    ";
+        // line 50
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 51
+            echo "                        <a class=\"dropdown-item\" href=\"/deportes/logout\">
+                            ";
+            // line 52
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("LogOut"), "html", null, true);
+            echo "
+                        </a>
+                    ";
+        } else {
+            // line 55
+            echo "                        <a class=\"dropdown-item\" href=\"/deportes/login\">
+                            ";
+            // line 56
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("LogIn"), "html", null, true);
+            echo "
+                        </a>
+                    ";
+        }
+        // line 59
+        echo "                </div>
             </li>
         </ul>
     </div>
 </nav>
 ";
-        // line 56
+        // line 64
         $this->displayBlock('body', $context, $blocks);
-        // line 62
+        // line 75
         echo "<footer class=\"footer\">
     <div class=\"container text-center\">
         <span class=\"text-muted\">Mi página de deportes <i class=\"fa fa-heart\" style=\"color: red;\"></i> realizada con Symfony4 <a href=\"#\">Imagina Formación</a></span>
     </div>
 </footer>
 ";
-        // line 67
+        // line 80
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 75
+        // line 88
         echo "</body>
 </html>
 ";
@@ -151,7 +178,7 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
 
     }
 
-    // line 56
+    // line 64
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -160,10 +187,28 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 57
+        // line 65
         echo "    <!-- AÑADIR TEXTO EN EL CUERPO DE NUESTRA PÁGINA -->
     <div class=\"container text-center\">
-        <h1 class=\"text-muted\">Mi página de deportes</h1>
+        <h1 class=\"text-muted\"> ";
+        // line 67
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(($context["texto"] ?? null)), "html", null, true);
+        echo "
+            ";
+        // line 68
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 69
+            echo "                ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Bienvenido"), "html", null, true);
+            echo "
+                ";
+            // line 70
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", []), "username", []), "html", null, true);
+            echo "
+            ";
+        }
+        // line 72
+        echo "        </h1>
     </div>
 ";
         
@@ -174,7 +219,7 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
 
     }
 
-    // line 67
+    // line 80
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -183,7 +228,7 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 68
+        // line 81
         echo "    <script src=\"https://code.jquery.com/jquery-3.2.1.min.js\" integrity=\"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=\" crossorigin=\"anonymous\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js\" integrity=\"sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh\" crossorigin=\"anonymous\"></script>
     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\" integrity=\"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ\" crossorigin=\"anonymous\"></script>
@@ -204,9 +249,14 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  187 => 68,  178 => 67,  164 => 57,  155 => 56,  141 => 8,  132 => 7,  114 => 4,  102 => 75,  100 => 67,  93 => 62,  91 => 56,  46 => 13,  44 => 7,  38 => 4,  33 => 1,);
+        return array (  232 => 81,  223 => 80,  211 => 72,  206 => 70,  201 => 69,  199 => 68,  195 => 67,  191 => 65,  182 => 64,  168 => 8,  159 => 7,  141 => 4,  129 => 88,  127 => 80,  120 => 75,  118 => 64,  111 => 59,  105 => 56,  102 => 55,  96 => 52,  93 => 51,  91 => 50,  87 => 49,  83 => 48,  46 => 13,  44 => 7,  38 => 4,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -258,9 +308,17 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
                     <img class=\"nav-profile-img rounded-circle\" src=\"/images/runner.png\">
                 </a>
                 <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                    <a class=\"dropdown-item\" href=\"#\">Perfil</a>
-                    <a class=\"dropdown-item\" href=\"#\">Crear Post</a>
-                    <a class=\"dropdown-item\" href=\"#\">Logout</a>
+                    <a class=\"dropdown-item\" href=\"#\">{{ 'Perfil'| trans }}</a>
+                    <a class=\"dropdown-item\" href=\"#\">{{ 'Crear Noticia'| trans }}</a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a class=\"dropdown-item\" href=\"/deportes/logout\">
+                            {{ 'LogOut'| trans }}
+                        </a>
+                    {% else %}
+                        <a class=\"dropdown-item\" href=\"/deportes/login\">
+                            {{ 'LogIn'| trans }}
+                        </a>
+                    {% endif %}
                 </div>
             </li>
         </ul>
@@ -269,7 +327,12 @@ class __TwigTemplate_17a6e818b5a758950e95bbeb2d72f70c35ebd5d8640f2f0712993ec2809
 {% block body %}
     <!-- AÑADIR TEXTO EN EL CUERPO DE NUESTRA PÁGINA -->
     <div class=\"container text-center\">
-        <h1 class=\"text-muted\">Mi página de deportes</h1>
+        <h1 class=\"text-muted\"> {{ texto | trans }}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {{'Bienvenido' | trans}}
+                {{ app.user.username}}
+            {% endif %}
+        </h1>
     </div>
 {% endblock %}
 <footer class=\"footer\">
